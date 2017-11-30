@@ -1,0 +1,23 @@
+{
+  "name": "Web-Bootcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlashPunisher/Web-Bootcamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlashPunisher/Web-Bootcamp/issues"
+  },
+  "homepage": "https://github.com/FlashPunisher/Web-Bootcamp#readme",
+  "dependencies": {
+    "marvel-api": "^1.1.0"
+  }
+}
