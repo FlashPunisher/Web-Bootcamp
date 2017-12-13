@@ -11,13 +11,14 @@
     "url": "git+https://github.com/FlashPunisher/Web-Bootcamp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "FlashPunisher",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FlashPunisher/Web-Bootcamp/issues"
   },
   "homepage": "https://github.com/FlashPunisher/Web-Bootcamp#readme",
   "dependencies": {
-    "marvel-api": "^1.1.0"
+    "marvel-api": "^1.1.0",
+    "mangodc": "2.2.30"
   }
 }
