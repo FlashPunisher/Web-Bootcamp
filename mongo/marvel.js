@@ -14,7 +14,7 @@ class Marvel {
     let obj = {}
     let arr = []
 
-    this.marvel.characters.findAll().then((heroes) => {
+    this.marvel.characters.findByName('thor').then((heroes) => {
       heroes['data'].forEach((hero,index) => {
         obj = {
           name: hero.name, 
@@ -36,6 +36,72 @@ class Marvel {
     .fail(console.error)
     .done
 
+    this.marvel.characters.findByName('spider-man').then((heroes) => {
+      heroes['data'].forEach((hero,index) => {
+        obj = {
+          name: hero.name, 
+          description:  hero.description,
+          image:  `${hero.thumbnail.path}.${hero.thumbnail.extension}`
+        }
+
+        hero.urls.forEach((urlItem) => {
+          if(urlItem.type === 'detail') {
+            obj.link = urlItem.url
+          }
+        })
+
+        arr.push(obj)
+      })
+      callback(arr)
+
+    })
+    .fail(console.error)
+    .done
+
+    this.marvel.characters.findByName('hulk').then((heroes) => {
+      heroes['data'].forEach((hero,index) => {
+        obj = {
+          name: hero.name, 
+          description:  hero.description,
+          image:  `${hero.thumbnail.path}.${hero.thumbnail.extension}`
+        }
+
+        hero.urls.forEach((urlItem) => {
+          if(urlItem.type === 'detail') {
+            obj.link = urlItem.url
+          }
+        })
+
+        arr.push(obj)
+      })
+      callback(arr)
+
+    })
+    .fail(console.error)
+    .done
+    
+    this.marvel.characters.findByName('adam warlock').then((heroes) => {
+      heroes['data'].forEach((hero,index) => {
+        obj = {
+          name: hero.name, 
+          description:  hero.description,
+          image:  `${hero.thumbnail.path}.${hero.thumbnail.extension}`
+        }
+
+        hero.urls.forEach((urlItem) => {
+          if(urlItem.type === 'detail') {
+            obj.link = urlItem.url
+          }
+        })
+
+        arr.push(obj)
+      })
+      callback(arr)
+
+    })
+    .fail(console.error)
+    .done
+   
     return arr
 
   }
@@ -43,7 +109,7 @@ class Marvel {
   insertDocuments(docs) {
     MongoClient.connect(this.url, (err,db) => {
       if(!err) {
-        let collection = db.collection('testCollection')
+        let collection = db.collection('Avengers')
         collection.insertMany(docs, (err,result) => {
           console.log(result)
         })
